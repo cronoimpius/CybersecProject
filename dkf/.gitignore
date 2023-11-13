@@ -1,0 +1,4 @@
+certificates/*
+conf/*
+db/*
+*.DS_Store
