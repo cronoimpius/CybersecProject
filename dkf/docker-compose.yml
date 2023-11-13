@@ -1,0 +1,8 @@
+version: '3'
+
+services: 
+
+  ldap-server:
+    image: 'ldap:v33'
+    ports:
+        - '389:389'

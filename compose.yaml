@@ -2,21 +2,30 @@ version: '3'
 
 services:
   openldap:
+    #command: 
     image: bitnami/openldap
     ports:
-      - "1389:1389"
-      - "1636:1636"
+      - "389:389"
+      - "636:636"
+    expose:
+      - 389
+      - 636
     environment:
+      - LDAP_DOMAIN=ex.org
+      - "LDAP_BASEDN=dc=ex,dc=org"
       - LDAP_ADMIN_USERNAME=admin
-      - LDAP_ADMIN_PASSWORD=adminpassword
+      - LDAP_ADMIN_PASSWORD=ciao
+      - LDAP_DOMAIN=ex
       - LDAP_USERS=user01,user02
       - LDAP_PASSWORDS=password1,password2
       - LDAP_PORT_NUMBER=389
       - LDAP_LDAPS_PORT_NUMBER=636
     volumes:
       - 'openldap_data:/bitnami/openldap'
-    domainname: "example.org"
-    hostname: "ldap-server"
+      #Adding generated schema to be automaticaly loaded
+      #      - ./fake_data/fake.schema:/container/service/slapd/assets/config/bootstrap/schema/fake.schema
+      #- ./fake_data/fake.ldif:/container/service/slapd/assets/config/bootstrap/ldif/custom/fake.ldif
+        #    domainname: "ex.orciao   hostname: "ldap-server"
 
 volumes:
   openldap_data:
