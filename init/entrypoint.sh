@@ -5,9 +5,10 @@
 systemctl enable slapd.service
 systemctl start slapd.service
 
-cp /init/conf/slapd.conf /etc/ldap/slapd.conf
-cp /init/fake_data/*.ldif /etc/ldap/schema/
-cp /init/fake_data/*.schema /etc/ldap/schema/
+#rm /etc/ldap/ldap.conf
+cp /init/conf/ldap.conf /etc/ldap/
+cp /init/data/*.ldif /etc/ldap/schema/
+cp /init/data/*.schema /etc/ldap/schema/
 
 echo "ls /var/lib/ldap"
 ls /var/lib/ldap
@@ -20,5 +21,9 @@ systemctl restart slapd.service
 
 echo "ldap status"
 systemctl status slapd.service
+
+#modify ldap
+
+ldapmodify -Y EXTERNAL -H ldapi:/// -f /etc/ldap/schema/modpsw.ldif
 
 sleep infinity
