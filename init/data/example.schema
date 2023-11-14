@@ -1,0 +1,37 @@
+# example.schema
+
+attributetype ( 1.3.6.1.4.1.9876.1.1.1
+    NAME 'o'
+    DESC 'Organization name'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15{32768} SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.9876.1.1.2
+    NAME 'ou'
+    DESC 'Organizational Unit name'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15{32768} SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.9876.1.1.3
+    NAME 'cn'
+    DESC 'Common Name'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15{32768} SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.9876.1.1.4
+    NAME 'mail'
+    DESC 'Email address'
+    EQUALITY caseIgnoreIA5Match
+    SUBSTR caseIgnoreIA5SubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.26{256} SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.9876.1.1.5
+    NAME 'telephoneNumber'
+    DESC 'Telephone Number'
+    EQUALITY telephoneNumberMatch
+    SUBSTR telephoneNumberSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.50 SINGLE-VALUE )
+
