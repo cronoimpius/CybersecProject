@@ -3,4 +3,9 @@
 2) to check if the docker is working well do: 
 	sudo docker exec cybersec_openldap_1 ldapsearch -x -H ldap://localhost:expoedport
 
-3)
+3)It's possible to add entry but be aware on how to do it: e.g. start from cn=confiIt's possible to add entry but be aware on how to do it: e.g. start from cn=config
+
+
+
+4) USE DOCKERFILE IN DKF pls
+

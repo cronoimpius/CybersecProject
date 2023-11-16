@@ -1,34 +1,27 @@
+# Image
 FROM debian:buster-backports
 
 ENV DEBIAN_FRONTEND=noninteractive
-RUN echo "slapd/root_password password secret" | debconf-set-selections && \
-   echo "slapd/root_password_again password secret" | debconf-set-selections && \
-   apt-get update && apt-get install -y --no-install-recommends slapd ldap-utils ldapscripts systemctl && \
-   rm -rf /var/lib/apt/lists/*
+ENV LDAP_DEBAUG_LEVEL=256
+# Install and updates
+RUN apt-get update && apt-get install -y --no-install-recommends vim slapd ldap-utils ldapscripts systemctl && \
+    rm -rf /var/lib/apt/lists/*
 
+# Copy generated files to the container
+COPY ./init /init
 
-# Copy LDAP initialization files to the container
+# Expose the LDAP port
+EXPOSE 10389 10636
+#WORKDIR /init
+# RUN chmod +x /init/slapd-init.sh
+# RUN /init/slapd-init.sh
+#CMD ["/bin/bash", "/init/slapd-init.sh"]
 
-COPY ./ldap-init/ /ldap-init
+#volumes if needded
 
-# Create necessary directories and clean up
+# Command to start ldap server
+#CMD ["slapd","-d","1"]
+#CMD ["/bin/bash", "/init/run.sh"]
+CMD ["/bin/bash", "/init/init.sh"]
 
-RUN rm -r /etc/ldap/slapd.d/ && \
-    ###rm -rf /var/lib/ldap/* && \
-    chmod +x /ldap-init/entrypoint.sh
-
-# Set the working directory
-
-WORKDIR /ldap-init
-
-# Expose port 389 for LDAP
-
-EXPOSE 389
-
-# Set environment variable for LDAP URIs
-
-ENV LDAP_URIS="ldap:///"
-
-# Define the command to run when the container starts
-
-CMD ["./entrypoint.sh"]
+#HEALTHCHECK CMD ["ldapsearch", "-H", "ldap://localhost:389", "-D", "${LDAP_BINDDN}", "-w", "${LDAP_SECRET}", "-b", "${LDAP_BINDDN}"]
