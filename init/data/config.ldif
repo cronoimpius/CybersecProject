@@ -1,8 +1,0 @@
-#dn: cn=admin,dc=example,dc=org
-#cn: admin
-#objectClass: organizationalRole
-#userPassword: ciao
-dn: olcDatabase={0}config,cn=config
-changeType: modify
-replace: olcRootPW
-olcRootPW: ciao
