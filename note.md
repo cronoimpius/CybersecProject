@@ -7,5 +7,12 @@
 
 
 
-4) USE DOCKERFILE IN DKF pls
+4) 
+-sudo docker build -t "sldap:prova" .
+
+-sudo docker run --privileged -p 389:389 -p 636:636 --name test [--detach] sldap:prova
+
+-sudo docker logs test
+
+-sudo docker stop test && sudo docker rm test && sudo docker image rm sldap:prova
 

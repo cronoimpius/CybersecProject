@@ -1,0 +1,14 @@
+attributetype ( 1.1.1.2.1
+    NAME 'exampleAttribute'
+    DESC 'Example Attribute'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+objectclass ( 1.1.1.1.1
+    NAME 'exampleObject'
+    DESC 'Example Object Class'
+    SUP top AUXILIARY
+    MUST ( cn $ description )
+    MAY ( userPassword $ telephoneNumber $ seeAlso $ description ) )
+
