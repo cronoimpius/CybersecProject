@@ -1,0 +1,14 @@
+root ::= dn
+cn ::= "{"   ws   "\"name\":"   ws   string   "}"
+cnlist ::= "[]" | "["   ws   cn   (","   ws   cn)*   "]"
+ObjectClass ::= "{"   ws   "\"name\":"   ws   string   "}"
+ObjectClasslist ::= "[]" | "["   ws   ObjectClass   (","   ws   ObjectClass)*   "]"
+dn ::= "{"   ws   "\"cn\":"   ws   string   ","   ws   "\"dc1\":"   ws   string   ","   ws   "\"dc2\":"   ws   string   "}"
+dnlist ::= "[]" | "["   ws   dn   (","   ws   dn)*   "]"
+string ::= "\""   ([^"]*)   "\""
+boolean ::= "true" | "false"
+ws ::= [ \t\n]*
+number ::= [0-9]+   "."?   [0-9]*
+stringlist ::= "["   ws   "]" | "["   ws   string   (","   ws   string)*   ws   "]"
+numberlist ::= "["   ws   "]" | "["   ws   string   (","   ws   number)*   ws   "]"
+

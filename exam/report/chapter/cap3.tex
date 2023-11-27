@@ -1,0 +1,22 @@
+\chapter{Data generation}
+To make the deception component generator a real one we need some data to insert into it.
+For generate this datas we can use one of the most talked technologies of our time: Large Language Models. In fact this is a task that they do well.
+\\
+To begin we need to decide which LLM use: the model choosen is LLAMA2, principally because it's an opensource project and it is possible to run it locally.
+\section{Problem}
+The benefit of running it locally have a cost: the precision of the model depends on the machine in which it's running. Eveni if the model is pretrained, depending on some parameters, the model could run better or worse.
+\\\\
+To fix this problem we had to decide in which way run the model locallly. So two was the streets that were followed:
+\begin{itemize}
+    \item use llama-cpp-python package
+    \item use ollama
+\end{itemize}
+\section{llama-cpp-python}
+This is a project born to create an interface to use llama-cpp in python.
+After setting up the environment, and create a python script to generate data (even inside the docker itself), what we can see is that the data generated are not so heterogeneous and it needs a lot of time to generate them. Another negative aspect is that i've to download the model and insert it in the docker to make it run, so the docker grows in its weight.
+\section{ollama}
+To avoid all this problems we have decided to use ollama. Ollama is a recent created project thatmakes users run LLMs locally in a docker-like way. So even in this case you have to download your model, but now we do not need to insert in our docker file.
+\\
+The idea is to generate data before, save it and then upload them in the docker.
+Here we can see a more heterogeneous data creation. Even if there are changes to be made to make it works, it's bettere than the previous output.
+
