@@ -16,3 +16,5 @@
 
 -sudo docker stop test && sudo docker rm test && sudo docker image rm sldap:prova
 
+
+try to create ollama script

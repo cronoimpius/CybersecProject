@@ -1,0 +1,12 @@
+\chapter{Final considerations}
+The creation of a deception component was possible going through different phases.
+\\
+At the beginning i've had to understand the service that was chosen to be duplicated with random data, after i've had to understand how create a Dockerfile to create it and make configuration possible and, at the end, the main point of all is how to generate credible data to insert into it.
+\\\\
+This was the main task, because some LLM runned locally performed not so good for what i was aimning to do. So to solve that i gave a quick look at the possibility to define a grammar in llama-cpp-python, to get a precise output. Unfortunately even doing so the generated data were not so credible.
+\\
+After some research i've found the Ollama project and i've tried to use it for that purpose. Even if in that case there's no possibility for use a specific grammar for the output, i've obtaine a more credible output and in a more ldif compatiple syntax.
+\\\\
+At the end of all i've created the OCI image for the LDAP server with all the needed features.
+\\\\
+Now everyone can, using some commands, create a fake LDAP server with data in it generated automatically, so that an attacker could think to aim for a real one.

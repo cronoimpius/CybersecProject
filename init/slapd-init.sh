@@ -2,13 +2,13 @@
 
 set -eux
 
-readonly DATA_DIR="/init/data"
-readonly CONFIG_DIR="/init/config"
+#readonly DATA_DIR="/init/data"
+#readonly CONFIG_DIR="/init/config"
 
-readonly LDAP_DOMAIN=example.com
-readonly LDAP_ORGANISATION="Example, Inc"
-readonly LDAP_BINDDN="cn=admin,dc=example,dc=com"
-readonly LDAP_SECRET=admin
+#readonly LDAP_DOMAIN=example.com
+#readonly LDAP_ORGANISATION="Example, Inc"
+#readonly LDAP_BINDDN="cn=admin,dc=example,dc=com"
+#readonly LDAP_SECRET=admin
 
 reconfigure_slapd(){
 echo "Reconfigure slapd..."

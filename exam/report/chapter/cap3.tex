@@ -19,4 +19,12 @@ To avoid all this problems we have decided to use ollama. Ollama is a recent cre
 \\
 The idea is to generate data before, save it and then upload them in the docker.
 Here we can see a more heterogeneous data creation. Even if there are changes to be made to make it works, it's bettere than the previous output.
-
+%% TODO: insert image
+After finding ollama, i've started to think on how i could implement it in a python script to make it generate random data when the docker is started.
+\\
+After reading the documentation online i've found a way to do so:
+%% TODO: python scipt
+\\
+Analyzing that i've observed that it needs some time to run, but at least it creates a valid number of random data.
+\\\\
+So now i've created the docker for the service, with the possibility to configure it and generate deception data: the last think to do is try to deploy it.
