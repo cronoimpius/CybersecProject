@@ -2,20 +2,69 @@
 \usepackage[T1]{fontenc}
 \usepackage{imakeidx}
 \usepackage[pdftex, bookmarks, colorlinks, breaklinks]{hyperref}
+\usepackage{graphicx}
+%% Define cover
+\usepackage{eso-pic}
+\usepackage{transparent}
 
+\newcommand\DockerB{%
+\put(200,-350){%
+\parbox[b][\paperheight]{\paperwidth}{%
+\vfill
+\centering
+{\transparent{0.4} \includegraphics[width=15cm,height=15cm,%
+keepaspectratio]{img/docker.pdf}}%
+\vfill
+}}}
 
+\newcommand\OllamaB{
+\put(-200,-350){
+    \parbox[b][\paperheight]{\paperwidth}{
+\vfill
+\centering
+{\transparent{0.7}\includegraphics[width=5cm, height=5cm,%
+keepaspectratio]{img/ollama.pdf}
+}
+\vfill
+}}}
+
+\newcommand\OldapB{
+\put(-230,270){
+    \parbox[b][\paperheight]{\paperwidth}{
+\vfill
+\centering
+{\transparent{0.4} \includegraphics[width=30cm, height=30cm, keepaspectratio]
+    {img/ldap.pdf}
+}
+\vfill
+}}}
 \renewcommand{\contentsname}{Index} %index
 
 \begin{document}
+% Back images
+\AddToShipoutPicture*{\OldapB}
+\AddToShipoutPicture*{\DockerB}
+\AddToShipoutPicture*{\OllamaB}
 
+\begin{titlepage}
     \begin{center}
-        \vspace{5mm}
-        {\large \uppercase{Deception component generator}}\\
-        \vspace{5mm}
-        {\large LDAP server}
+        \vspace*{\baselineskip}
+        % AUTHOR
+        {\Large Gianmiriano Porrazzo}\\
+        \vspace*{0.167\textheight}
+        % TITLE AND SUBTITLE
+        \textbf{\LARGE Cybersecurity-M}\\[\baselineskip] % First title line
+	
+        {\textcolor{Red}{\Huge Deception Component \\ Generator}}\\[\baselineskip] % Main title line which draws the focus of the reader
+	
+	      {\Large \textit{LDAP server}} % Subtitle
+	
+	\vfill % Whitespace between the titles and the publisher
+	
     \end{center}
+\end{titlepage}
 
-
+\ClearShipoutPicture
 
     %%%%%%% INDEX %%%%%%%%%%%%%%
     \tableofcontents
