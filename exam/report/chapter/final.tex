@@ -5,8 +5,10 @@ At the beginning i've had to understand the service that was chosen to be duplic
 \\\\
 This was the main task, because some LLM runned locally performed not so good for what i was aimning to do. So to solve that i gave a quick look at the possibility to define a grammar in llama-cpp-python, to get a precise output. Unfortunately even doing so the generated data were not so credible.
 \\
-After some research i've found the Ollama project and i've tried to use it for that purpose. Even if in that case there's no possibility for use a specific grammar for the output, i've obtaine a more credible output and in a more ldif compatiple syntax.
+After some research i've found the Ollama project and i've tried to use it for that purpose. Even if in that case there's no possibility for use a specific grammar for the output, i've obtained a more credible output and in a more ldif compatiple syntax.
 \\\\
 At the end of all i've created the OCI image for the LDAP server with all the needed features.
 \\\\
-Now everyone can, using some commands, create a fake LDAP server with data in it generated automatically, so that an attacker could think to aim for a real one.
+One consideration that i can made about this is that using LLM in a docker make it grow in size a lot, because it has to have the model installed to run it and generate the data. All that can make the installation slower and the container pretty heavy. One solution that could be applied is to have a different machine or a different container, that act like a server, in which run the choosen model and make requests to it to make it generate data. In that way we could have lighter and faster containers.
+\\\\
+Except for this detail, now the container is finished and everyone can, using some commands, create a fake LDAP server with data in it generated automatically. So we can divert an attacker to target that service instead a real one and make it to loose time and resources doing that.
