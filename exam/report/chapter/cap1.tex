@@ -17,7 +17,11 @@ As previously mentioned, the directory could be a generic one, that is possible 
 The DBI manages a collection of entry or objects. The entries are a composed by attributes, which have a type and one or more values. Every entry has a Distinguish name (DN), that also indicate the position from the root.
 \\
 The entries are also hierarchically ordered, and the final structure is called DIT (Directory Information Tree) and is a way to store the representation of the DB managed by the DBI.
-%% TODO:figure
+\begin{figure}[h]
+    \caption{How LDAP works}
+    \centering
+    \includegraphics[width=\textwidth]{img/arch.png}
+\end{figure}
 \\
 It is used a hierarchy because LDAP was born as a system to organize data about people and resources inside a company. The hierarchy also allows us to make direct links to the data, an easy partitioning system to administrate, control the access and locate easily data. 
 \\\\
@@ -36,7 +40,20 @@ Every entry is based on one or more objectClass, which describes the types of at
 The attribute type can be one of the commonly used or can also be described by the user, but in that case, it must be defined in a file and added to the server configuration. It can be done using the ldif format or a schema file.
 \\
 This is valid also for objectClass.
-%% TODO: examples and figure
+\begin{mdframed}[backgroundcolor=back1]
+    \begin{lstlisting}[style=bash, caption={Example of definition of an attributeType (for objectClasses is similar)}]
+olcAttributeTypes: (...)
+    DESC 'name'
+    EQUALITY caseMatch
+    SUBSTR caseMatchSubs
+    SYNTAX ....
+    \end{lstlisting}
+\end{mdframed}
+\begin{figure}[h]
+    \caption{Correspondance between schema definition and DIT elements}
+    \centering
+    \includegraphics[width=\textwidth]{img/dit.png}
+\end{figure}
 \\\\
 One famous implementation of LDAP is OpenLDAP, which includes the Access protocol and a directory. This is the one choosen to create the docker image to configure.
 %% TODO: insert OpenLdap logo
