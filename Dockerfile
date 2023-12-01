@@ -1,8 +1,12 @@
 # Image
 FROM debian:buster-backports
+USER root
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV LDAP_DEBAUG_LEVEL=256
+
+ENV PYTHON_VERSION=3.10.0
+ENV PYTHON_PIP_VERSION=21.3.1
 
 # Configuration variables
 
@@ -15,8 +19,29 @@ ENV LDAP_BINDDN="cn=admin,dc=example,dc=com"
 ENV LDAP_SECRET=admin
 
 # Install and updates
-RUN apt-get update && apt-get install -y --no-install-recommends vim slapd ldap-utils ldapscripts systemctl schema2ldif && \
+RUN apt-get update && apt-get upgrade -y && apt-get install --no-install-recommends -y \
+    wget build-essential libreadline-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev\
+    vim \
+    slapd \
+    ldap-utils \
+    ldapscripts \
+    systemctl \
+    schema2ldif \
+    curl \
+    ca-certificates && \
     rm -rf /var/lib/apt/lists/*
+RUN apt-get purge python* -y
+# update python
+RUN wget https://www.python.org/ftp/python/3.11.1/Python-3.11.1.tgz 
+RUN tar -xvf Python-3.11.1.tgz 
+RUN cd Python-3.11.1 && \ 
+    ./configure --enable-optimizations && \ 
+    make altinstall
+# Ollama
+RUN curl https://ollama.ai/install.sh | sh
+RUN ollama serve && ollama pull llama2
+RUN pip3.11 install --upgrade pip && pip3.11 install langchain
+
 
 # Copy generated files to the container
 COPY ./init /init

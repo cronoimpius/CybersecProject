@@ -3,10 +3,11 @@ Docker is a set of PaaS products that uses OS virtualization to deliver software
 \\\\
 To develop a docker container there are several options: one is to create a Docekerfile in which we can detail all the specifications and the features that we want to run in that container. Usually that is to run a single application in a sandbox environment.  
 \\
-In the study case the application is an OpenLDAP server. To run that it’s needed an operating system: the choice is a debian image.
+In the study case the application is an OpenLDAP server. To run that it’s needed an operating system: the choice i made is to use a debian image.
 \section{Creation of the container}
 %% TODO: dockerfile
-Once the base image is chosen, it is necessary to install the package that we’ll use. The list of packages is shown in the figure. In particular slapd is the daemon that runs the ldap server, ldap-utils contains all the tools to search, add, modify and delete entries from the server from the outside. The others contains usefull tools that will be used in the next steps.  
+\lstinputlisting[style=docker]{../../Dockerfile}
+Once the base image is chosen, it is necessary to install the package that will be used. The list of packages is shown in the figure. In particular slapd is the daemon that runs the ldap server, ldap-utils contains all the tools to search, add, modify and delete entries from the server from the outside. The others contains usefull tools that will be used in the next steps.  
 \\
 %% show env variables
 \\
