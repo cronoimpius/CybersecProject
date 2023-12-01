@@ -3,49 +3,67 @@
 \usepackage{imakeidx}
 \usepackage[pdftex, bookmarks, colorlinks, breaklinks]{hyperref}
 \usepackage{graphicx}
+%%Bibliography
+\usepackage[backend=bibtex,style=ieee,sorting=none]{biblatex}
+\bibliography{./bib/bibliography}
 %% Code
 \usepackage{listings}
 \usepackage{xcolor}
+\usepackage[framemethod=tkiz]{mdframed}
 
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
-\definecolor{codeorange}{rgb}{1,0.49,0}
-\definecolor{back}{rgb}{0.95,0.95,0.96}
+\definecolor{codeorange}{RGB}{  243, 156, 18  }
+\definecolor{back}{RGB}{ 214, 219, 223 }
+
+\definecolor{codegreen1}{RGB}{ 82, 190, 128}
+\definecolor{codegray}{RGB}{0.5,0.5,0.5}
+\definecolor{codeorange1}{RGB}{  243, 156, 18  }
+\definecolor{back1}{RGB}{ 214, 219, 223 }
+
+\definecolor{c1py}{RGB}{ 187, 143, 206 }
+\definecolor{c2py}{RGB}{ 133, 193, 233 }
+\definecolor{bpy}{RGB}{ 212, 239, 223}
+
+\lstset{
+    breaklines=true,
+    breakatwhitespace=false,
+}
 %% Dockerfile
 \lstdefinestyle{docker}{
+    keywords={FROM, RUN, COPY, ADD, ENTRYPOINT, CMD,  ENV, ARG, WORKDIR, EXPOSE, LABEL, USER, VOLUME, STOPSIGNAL, ONBUILD, MAINTAINER},
     backgroundcolor=\color{back},
     commentstyle=\color{codegray},
-    keywordstyle=\color{codeorange},
-    nuberstye=\tiny\color{codegray},
+    keywordstyle=\color{codeorange}\bfseries,
+    numberstye=\tiny\color{codegray},
     stringstyle=\color{codegreen},
-    basicstyle=\ttfamily\footnotesize,
-    breakatwhitespace=false,         
-    breaklines=true,                 
-    captionpos=b,                    
+    basicstyle=\ttfamily\linespread{1.15}\footnotesize,
+    comment=[l]{\#},
+    morestring=[b]',
+    morestring=[b]",
     keepspaces=true,                 
-    numbers=left,                    
+    numbers=none,                    
     numbersep=5pt,                  
     showspaces=false,                
     showstringspaces=false,
     showtabs=false,                  
     tabsize=2,
-    xleftmargin=10pt,
+    xleftmargin=7pt,
 }
 %% bash
 
 \lstdefinestyle{bash}{
-    backgroundcolor=\color{back},
+    keywords={set , echo, cat, local, for, if, else, then, do, done, in, find, sort, chown, slapd,kill, sleep, convert_schema, reconfigure_slapd, load_initial_data, configure_admin_config_pw, sed, ldapmodify, ldapadd},
+    backgroundcolor=\color{back1},
     commentstyle=\color{codegray},
-    keywordstyle=\color{codeorange},
-    nuberstye=\tiny\color{codegray},
-    stringstyle=\color{codegreen},
+    keywordstyle=\color{codegreen1},
+    numberstye=\tiny\color{codegray},
+    stringstyle=\color{codeorange},
     basicstyle=\ttfamily\footnotesize,
-    breakatwhitespace=false,         
-    breaklines=true,                 
+    comment=[l]{\#},
+    string=[l]{\"},
     captionpos=b,                    
     keepspaces=true,                 
-    numbers=left,                    
-    numbersep=5pt,                  
     showspaces=false,                
     showstringspaces=false,
     showtabs=false,                  
@@ -55,18 +73,17 @@
 %%Python
 
 \lstdefinestyle{python}{
-    backgroundcolor=\color{back},
+    keywords={from, import, with, as},
+    ndkeywords = {olama, Ollama, write, open},
+    backgroundcolor=\color{bpy},
     commentstyle=\color{codegray},
-    keywordstyle=\color{codeorange},
-    nuberstye=\tiny\color{codegray},
+    keywordstyle=\color{c1py},
+    numberstye=\tiny\color{codegray},
     stringstyle=\color{codegreen},
+    ndkeywordstyle=\color{c2py},
     basicstyle=\ttfamily\footnotesize,
-    breakatwhitespace=false,         
-    breaklines=true,                 
     captionpos=b,                    
     keepspaces=true,                 
-    numbers=left,                    
-    numbersep=5pt,                  
     showspaces=false,                
     showstringspaces=false,
     showtabs=false,                  
@@ -111,32 +128,49 @@ keepaspectratio]{img/ollama.pdf}
 \renewcommand{\contentsname}{Index} %index
 
 \begin{document}
+
 % Back images
 \AddToShipoutPicture*{\OldapB}
 \AddToShipoutPicture*{\DockerB}
 \AddToShipoutPicture*{\OllamaB}
 
 \begin{titlepage}
-    \begin{center}
+    \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+    \center
         \vspace*{\baselineskip}
+        \vfill\vfill\vfill\vfill\vfill
+        \textsc{\LARGE ALMA MATER STUDIORUM \\ UNIVERSIT\`A di BOLOGNA }\\[1.5cm]
+        
+        \textsc{\Large Laurea Magistrale in Ingegneria Informatica}\\[0.5cm]
+        %TITLE
+        \HRule\\[0.4cm]
+        {\huge\bfseries Deception Component \\ Generator}\\[0.4cm]
+        {\Large \texit{LDAP server}}
+        \HRule\\[1.5cm]
         % AUTHOR
-        {\Large Gianmiriano Porrazzo}\\
-        \vspace*{0.167\textheight}
-        % TITLE AND SUBTITLE
-        \textbf{\LARGE Cybersecurity-M}\\[\baselineskip] % First title line
-	
-        {\textcolor{Red}{\Huge Deception Component \\ Generator}}\\[\baselineskip] % Main title line which draws the focus of the reader
-	
-	      {\Large \textit{LDAP server}} % Subtitle
+        \vfill\vfill
+		        \raggedleft
+            \begin{tabular}[t]{@{} r l @{}}
+			      \large
+			          \textit{Made by}\\
+			          Porrazzo \textsc{Gianmiriano}\\ % Your name
+            \end{tabular}
+
+        \vfill\vfill\vfill % Position the date 3/4 down the remaining page
+	          \raggedright
+            {\large\today} % Date, change the \today to a set date if you want to be precise
 	
 	\vfill % Whitespace between the titles and the publisher
 	
-    \end{center}
 \end{titlepage}
 
 \ClearShipoutPicture
 
     %%%%%%% INDEX %%%%%%%%%%%%%%
+    \hypersetup{
+        colorlinks=true,
+        linkcolor=black
+    }
     \tableofcontents
     %%%%%%% INTRODUCTION %%%%%%%
     \input{chapter/intro.tex}
@@ -150,4 +184,6 @@ keepaspectratio]{img/ollama.pdf}
     \input{chapter/cap4.tex}
     %%%%%%% END %%%%%%%%%%%%%%%%
     \input{chapter/final.tex}
+    %%%%%%% BIBLIOGRAPHY %%%%%%%
+    \printbibliography[heading=bibintoc]
 \end{document}

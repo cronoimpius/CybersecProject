@@ -12,6 +12,6 @@ Use ollama in a scipt
 from langchain.llms import Ollama
 olama= Ollama(model="llama2")
 out=olama("generate 10 entry for ldap server using ldif syntax")
-with open("response.txt", "a") as f:
+with open("./data/response.txt", "a") as f:
   f.write(out)
 

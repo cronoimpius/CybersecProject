@@ -15,5 +15,5 @@ output = llm(prompt,temperature=1,top_p=0.9,max_tokens=-1)
 print(output['choices'][0]['text'])
 
 # Write to file
-with open("response.txt", "a") as f:
+with open("out.txt", "a") as f:
   f.write(output['choices'][0]['text'])
