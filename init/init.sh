@@ -6,6 +6,9 @@ ollama pull llama2 &
 PID=$!
 echo $PID
 wait $PID
+
+./ollama.py
+
 /init/slapd-init.sh
 
 /init/run.sh
