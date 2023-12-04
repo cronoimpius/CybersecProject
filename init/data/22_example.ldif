@@ -6,7 +6,8 @@ cn:John Smith
 sn:Smith
 givenName:John
 mail:jsmith@example.com
-userPassword:{SSHA}y5fKt9JVyP1SX2+5UkGX8X+Yq4
+userPassword:{SSHA}y6fKt9JVyP1SX2+5UkGX8X+Yq4
+
 dn:cn=Jane Doe,dc=example,dc=com
 objectClass:top
 objectClass:person
@@ -16,6 +17,7 @@ sn:Doe
 givenName:Jane
 mail:jdoe@example.com
 userPassword:{SSHA}y6fKt9JVyP1SX2+5UkGX8X+Yq4
+
 dn:cn=Bob Johnson,dc=example,dc=com
 objectClass:top
 objectClass:person
@@ -24,7 +26,8 @@ cn:Bob Johnson
 sn:Johnson
 givenName:Bob
 mail:bjohnson@example.com
-userPassword:{SSHA}y7fKt9JVyP1SX2+5UkGX8X+Yq4
+userPassword:{SSHA}y6fKt9JVyP1SX2+5UkGX8X+Yq4
+
 dn:cn=Alice Green,dc=example,dc=com
 objectClass:top
 objectClass:person
@@ -33,13 +36,5 @@ cn:Alice Green
 sn:Green
 givenName:Alice
 mail:agreen@example.com
-userPassword:{SSHA}y8fKt9JVyP1SX2+5UkGX8X+Yq4
-dn:cn=Samuel Kim,dc=example,dc=com
-objectClass:top
-objectClass:person
-objectClass:organizationalPerson
-cn:Samuel Kim
-sn:Kim
-givenName:Samuel
-mail:skim@example.com
-userPassword:{SSHA}y9fKt9JVyP1SX2+5UkGX8X+Yq4
+userPassword:{SSHA}y6fKt9JVyP1SX2+5UkGX8X+Yq4
+
