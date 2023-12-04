@@ -1,5 +1,5 @@
 \chapter{Docker}
-Docker is a set of PaaS products that uses OS virtualization to deliver software in packeges called containers. A container is a unit of software that packages up software and its dependencies, so the application runs and could also be shared. 
+Docker \cite{docker} is a set of PaaS products that uses OS virtualization to deliver software in packeges called containers. A container is a unit of software that packages up software and its dependencies, so the application runs and could also be shared. 
 \\\\
 To develop a docker container there are several options: one is to create a Docekerfile in which we can detail all the specifications and the features that we want to run in that container. Usually that is to run a single application in a sandbox environment.  
 \\
@@ -34,7 +34,7 @@ The \textit{configure\_admin\_config\_pw()} insert the info of a specific ldif f
 \\
 \textit{load\_initial\_data()} finds all the ldif files inserted into the copied folder and add them following a specified order (in our case the order is taken from the file names).
 \\
-The last function converts the .schema files into .ldif definitions, using the tool \textbf{schema2ldif} and add them into the directory.
+The last function converts the .schema files into .ldif definitions, using the tool \textbf{schema2ldif} \cite{schema2ldif} and add them into the directory.
 \\
 After that configuration steps the server is created. To allow it to run on the exposed ports, it's stopped and reactivated using the following script.
 \begin{mdframed}[backgroundcolor=back]

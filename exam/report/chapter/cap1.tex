@@ -1,7 +1,7 @@
 \chapter{What is LDAP}
 Before starting to create the deception component generator, it's usefull to understand what LDAP is.
 \\\\
-LDAP stands for Lightweight Directory Access Protocol, so it’s a protocol to make queries and modify a directory service.  
+LDAP \cite{ldap} stands for Lightweight Directory Access Protocol, so it’s a protocol to make queries and modify a directory service.  
 \\
 In fact, the protocol does not include a directory service per se, but some implementations of it also have an integrated directory service. 
 \\
@@ -10,7 +10,6 @@ At the beginning, the LDAP protocol was conceived to create an alternative for t
 The LDAP protocol has been updated over the years and now it’s at the third version. 
 \\
 In the third version of the protocol, the simple authentication and security layer (SASL) was added, which is a framework for authentication and security in the internet protocols. 
-\\\\
 \section{How it works}
 As previously mentioned, the directory could be a generic one, that is possible thanks to the interface, called DataBase Interface easily implementable in a module to guide the beckend. 
 \\
@@ -20,7 +19,7 @@ The entries are also hierarchically ordered, and the final structure is called D
 \begin{figure}[h]
     \caption{How LDAP works}
     \centering
-    \includegraphics[width=\textwidth]{img/arch.png}
+    \includegraphics[width=15cm]{img/arch.png}
 \end{figure}
 \\
 It is used a hierarchy because LDAP was born as a system to organize data about people and resources inside a company. The hierarchy also allows us to make direct links to the data, an easy partitioning system to administrate, control the access and locate easily data. 
@@ -52,8 +51,8 @@ olcAttributeTypes: (...)
 \begin{figure}[h]
     \caption{Correspondance between schema definition and DIT elements}
     \centering
-    \includegraphics[width=\textwidth]{img/dit.png}
+    \includegraphics[width=15cm]{img/dit.png}
 \end{figure}
 \\\\
-One famous implementation of LDAP is OpenLDAP, which includes the Access protocol and a directory. This is the one choosen to create the docker image to configure.
+One famous implementation of LDAP is OpenLDAP \cite{openldap}, which includes the Access protocol and a directory. This is the one choosen to create the docker image to configure.
 %% TODO: insert OpenLdap logo

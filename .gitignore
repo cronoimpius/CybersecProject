@@ -1,5 +1,9 @@
 model/*
 exam/report/*.aux
+exam/report/*.bbl
+exam/report/*.bcf
+exam/report/*.blg
+exam/report/*.blx.bib
 exam/report/*.fdb_latexmk
 exam/report/*.fls
 exam/report/*.idx
@@ -9,3 +13,5 @@ exam/report/*.log
 exam/report/*.gz
 exam/report/*.toc
 exam/report/*.out
+exam/bib/*
+exam/config/*

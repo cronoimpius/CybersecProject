@@ -16,5 +16,100 @@
   {}
 \endgroup
 
-\datalist[entry]{none/global//global/global}\enddatalist
+\datalist[entry]{none/global//global/global}
+  \entry{ldap}{online}{}
+    \name{author}{1}{}{%
+      {{hash=I}{%
+         family={IETF},
+         familyi={I\bibinitperiod},
+      }}%
+    }
+    \keyw{ldap}
+    \strng{namehash}{I1}
+    \strng{fullhash}{I1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{LDAP protocol}
+    \verb{url}
+    \verb https://ldap.com
+    \endverb
+    \field{year}{1993}
+  \endentry
+
+  \entry{openldap}{online}{}
+    \name{author}{1}{}{%
+      {{hash=eaKZ}{%
+         prefix={et},
+         prefixi={e\bibinitperiod},
+         family={al.},
+         familyi={a\bibinitperiod},
+         given={Kurt\bibnamedelima Zeilenga},
+         giveni={K\bibinitperiod\bibinitdelim Z\bibinitperiod},
+      }}%
+    }
+    \keyw{ldap,server}
+    \strng{namehash}{aKZe1}
+    \strng{fullhash}{aKZe1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{OpenLDAP server}
+    \verb{url}
+    \verb https://www.openldap.org/
+    \endverb
+    \field{year}{1998}
+  \endentry
+
+  \entry{docker}{online}{}
+    \name{author}{1}{}{%
+      {{hash=eaSH}{%
+         prefix={et},
+         prefixi={e\bibinitperiod},
+         family={al.},
+         familyi={a\bibinitperiod},
+         given={Solomon\bibnamedelima Hykes},
+         giveni={S\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+    }
+    \keyw{docker}
+    \strng{namehash}{aSHe1}
+    \strng{fullhash}{aSHe1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Docker}
+    \verb{url}
+    \verb https://www.docker.com/
+    \endverb
+    \field{year}{2013}
+  \endentry
+
+  \entry{schema2ldif}{online}{}
+    \keyw{ldap}
+    \field{labeltitlesource}{title}
+    \field{title}{schema2ldif}
+    \verb{url}
+    \verb https://github.com/fusiondirectory/schema2ldif
+    \endverb
+    \field{year}{2020}
+  \endentry
+
+  \entry{llama-cpp-python}{online}{}
+    \keyw{data generation}
+    \field{labeltitlesource}{title}
+    \field{title}{llama-cpp-python}
+    \verb{url}
+    \verb https://llama-cpp-python.readthedocs.io/en/latest/
+    \endverb
+    \field{year}{2023}
+  \endentry
+
+  \entry{ollama}{online}{}
+    \keyw{data generation}
+    \field{labeltitlesource}{title}
+    \field{title}{Ollama}
+    \verb{url}
+    \verb https://ollama.ai/
+    \endverb
+    \field{year}{2023}
+  \endentry
+\enddatalist
 \endinput

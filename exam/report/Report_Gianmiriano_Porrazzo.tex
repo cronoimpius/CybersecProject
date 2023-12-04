@@ -3,8 +3,22 @@
 \usepackage{imakeidx}
 \usepackage[pdftex, bookmarks, colorlinks, breaklinks]{hyperref}
 \usepackage{graphicx}
+%% TO enhance output
+\usepackage{lmodern}
+
+%%Input config
+\input{config/config}
+%%Page size
+\usepackage{geometry}
+\geometry{
+    a4paper,
+    total={170mm, 260mm},
+    left=20mm,
+    top=20mm,
+}
 %%Bibliography
 \usepackage[backend=bibtex,style=ieee,sorting=none]{biblatex}
+
 \bibliography{./bib/bibliography}
 %% Code
 \usepackage{listings}
@@ -35,7 +49,7 @@
     backgroundcolor=\color{back},
     commentstyle=\color{codegray},
     keywordstyle=\color{codeorange}\bfseries,
-    numberstye=\tiny\color{codegray},
+    %numberstye=\tiny\color{codegray},
     stringstyle=\color{codegreen},
     basicstyle=\ttfamily\linespread{1.15}\footnotesize,
     comment=[l]{\#},
@@ -57,7 +71,7 @@
     backgroundcolor=\color{back1},
     commentstyle=\color{codegray},
     keywordstyle=\color{codegreen1},
-    numberstye=\tiny\color{codegray},
+    %numberstye=\tiny\color{codegray},
     stringstyle=\color{codeorange},
     basicstyle=\ttfamily\footnotesize,
     comment=[l]{\#},
@@ -78,7 +92,7 @@
     backgroundcolor=\color{bpy},
     commentstyle=\color{codegray},
     keywordstyle=\color{c1py},
-    numberstye=\tiny\color{codegray},
+    %numberstye=\tiny\color{codegray},
     stringstyle=\color{codegreen},
     ndkeywordstyle=\color{c2py},
     basicstyle=\ttfamily\footnotesize,
@@ -95,11 +109,11 @@
 \usepackage{transparent}
 
 \newcommand\DockerB{%
-\put(200,-350){%
+\put(150,-340){%
 \parbox[b][\paperheight]{\paperwidth}{%
 \vfill
 \centering
-{\transparent{0.4} \includegraphics[width=15cm,height=15cm,%
+{\transparent{0.4} \includegraphics[width=17cm,height=17cm,%
 keepaspectratio]{img/docker.pdf}}%
 \vfill
 }}}
@@ -116,7 +130,7 @@ keepaspectratio]{img/ollama.pdf}
 }}}
 
 \newcommand\OldapB{
-\put(-230,270){
+\put(-320,290){
     \parbox[b][\paperheight]{\paperwidth}{
 \vfill
 \centering
@@ -139,26 +153,28 @@ keepaspectratio]{img/ollama.pdf}
     \center
         \vspace*{\baselineskip}
         \vfill\vfill\vfill\vfill\vfill
-        \textsc{\LARGE ALMA MATER STUDIORUM \\ UNIVERSIT\`A di BOLOGNA }\\[1.5cm]
+        \textsc{\LARGE ALMA MATER STUDIORUM \\ UNIVERSITY OF BOLOGNA }\\[1.5cm]
         
-        \textsc{\Large Laurea Magistrale in Ingegneria Informatica}\\[0.5cm]
+        \textsc{\Large Master in Computer Engineering}\\[0.5cm]
         %TITLE
         \HRule\\[0.4cm]
         {\huge\bfseries Deception Component \\ Generator}\\[0.4cm]
         {\Large \texit{LDAP server}}
         \HRule\\[1.5cm]
+        %YEAR
+        {\large A.Y. 2023-2024}
         % AUTHOR
         \vfill\vfill
-		        \raggedleft
+		        \center
             \begin{tabular}[t]{@{} r l @{}}
 			      \large
-			          \textit{Made by}\\
+			          %\textit{Made by}\\
 			          Porrazzo \textsc{Gianmiriano}\\ % Your name
             \end{tabular}
 
         \vfill\vfill\vfill % Position the date 3/4 down the remaining page
-	          \raggedright
-            {\large\today} % Date, change the \today to a set date if you want to be precise
+	          %\raggedright
+            %{\large\today} % Date, change the \today to a set date if you want to be precise
 	
 	\vfill % Whitespace between the titles and the publisher
 	
@@ -169,7 +185,8 @@ keepaspectratio]{img/ollama.pdf}
     %%%%%%% INDEX %%%%%%%%%%%%%%
     \hypersetup{
         colorlinks=true,
-        linkcolor=black
+        linkcolor=black,
+        citecolor=black
     }
     \tableofcontents
     %%%%%%% INTRODUCTION %%%%%%%
