@@ -2,7 +2,7 @@ import llama_cpp
 
 # Initialize Llama object
 llm = llama_cpp.Llama(
-    model_path="./model/llama-2-7b-chat.Q5_K_M.gguf", 
+    model_path="../model/llama-2-7b-chat.Q5_K_M.gguf", 
     n_ctx=512
 )
 

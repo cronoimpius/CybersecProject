@@ -48,4 +48,5 @@ EXPOSE 10389 10636
 # Command to start ldap server
 CMD ["/bin/bash", "/init/init.sh"]
 
+
 #HEALTHCHECK CMD ["ldapsearch", "-H", "ldap://localhost:389", "-D", "${LDAP_BINDDN}", "-w", "${LDAP_SECRET}", "-b", "${LDAP_BINDDN}"]

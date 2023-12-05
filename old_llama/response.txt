@@ -139,3 +139,4 @@ cn: John Smith
 jobTitle: New Job Title
 ```
 Note that the above LDIF entries are just examples and may need to be modified based on your specific use case and LDAP server configuration.
+

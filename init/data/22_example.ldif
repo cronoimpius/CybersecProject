@@ -1,40 +1,44 @@
-dn:cn=John Smith,dc=example,dc=com
-objectClass:top
-objectClass:person
-objectClass:organizationalPerson
-cn:John Smith
-sn:Smith
-givenName:John
-mail:jsmith@example.com
-userPassword:{SSHA}y6fKt9JVyP1SX2+5UkGX8X+Yq4
+dn: cn=John Smith,dc=example,dc=com
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: John Smith
+sn: Smith
+givenName: John
+mail: jsmith@example.com
+userPassword: {SSHA}y6fKt9JVyP1SX2+5UkGX8X+Yq4
 
-dn:cn=Jane Doe,dc=example,dc=com
-objectClass:top
-objectClass:person
-objectClass:organizationalPerson
-cn:Jane Doe
-sn:Doe
-givenName:Jane
-mail:jdoe@example.com
-userPassword:{SSHA}y6fKt9JVyP1SX2+5UkGX8X+Yq4
+dn: cn=Jane Doe,dc=example,dc=com
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: Jane Doe
+sn: Doe
+givenName: Jane
+mail: jdoe@example.com
+userPassword: {SSHA}y6fKt9JVyP1SX2+5UkGX8X+Yq4
 
-dn:cn=Bob Johnson,dc=example,dc=com
-objectClass:top
-objectClass:person
-objectClass:organizationalPerson
-cn:Bob Johnson
-sn:Johnson
-givenName:Bob
-mail:bjohnson@example.com
-userPassword:{SSHA}y6fKt9JVyP1SX2+5UkGX8X+Yq4
+dn: cn=Bob Johnson,dc=example,dc=com
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: Bob Johnson
+sn: Johnson
+givenName: Bob
+mail: bjohnson@example.com
+userPassword: {SSHA}y6fKt9JVyP1SX2+5UkGX8X+Yq4
 
-dn:cn=Alice Green,dc=example,dc=com
-objectClass:top
-objectClass:person
-objectClass:organizationalPerson
-cn:Alice Green
-sn:Green
-givenName:Alice
-mail:agreen@example.com
-userPassword:{SSHA}y6fKt9JVyP1SX2+5UkGX8X+Yq4
+dn: cn=Alice Green,dc=example,dc=com
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: Alice Green
+sn: Green
+givenName: Alice
+mail: agreen@example.com
+userPassword: {SSHA}y6fKt9JVyP1SX2+5UkGX8X+Yq4
 
