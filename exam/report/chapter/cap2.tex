@@ -6,7 +6,7 @@ To develop a docker container there are several options: one is to create a Doce
 In the study case the application is an OpenLDAP server. To run that it’s needed an operating system: the choice i made is to use a debian image.
 \section{Creation of the container}
 \begin{mdframed}[backgroundcolor=back]
-\lstinputlisting[style=docker]{../../Dockerfile}
+\lstinputlisting[style=docker]{code/Dockerfile}
 \end{mdframed}
 Once the base image is chosen, it is necessary to install the package that will be used. The list of packages is shown in the figure. In particular slapd is the daemon that runs the ldap server, ldap-utils contains all the tools to search, add, modify and delete entries from the server from the outside. The others contains usefull tools that will be used in the next steps.  
 \\
@@ -38,7 +38,11 @@ The last function converts the .schema files into .ldif definitions, using the t
 \\
 After that configuration steps the server is created. To allow it to run on the exposed ports, it's stopped and reactivated using the following script.
 \begin{mdframed}[backgroundcolor=back]
-\lstinputlisting[style=bash]{../../init/slapd-init.sh}
+\lstinputlisting[style=bash]{code/slapd-init.sh}
 \end{mdframed}
 Once generated the Dockerfile and the relative configuration we can run the container and see that it works.
-%% TODO: proof
+\begin{figure}[h]
+    \caption{Example of working container}
+    \centering
+    \includegraphics[width=10cm]{img/search.jpg}
+\end{figure}

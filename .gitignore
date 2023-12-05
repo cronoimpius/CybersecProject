@@ -13,5 +13,7 @@ exam/report/*.log
 exam/report/*.gz
 exam/report/*.toc
 exam/report/*.out
-exam/bib/*
-exam/config/*
+exam/report/bib/*
+exam/report/config/*
+exam/report/code/*
+oci/image

@@ -1,0 +1,71 @@
+
+{
+ "dn": "cn=Jane Smith,ou=people,dc=example,dc=com", 
+  "objectClass": 
+    [
+      "top", 
+      "person", 
+      "organizationalPerson"
+    ], 
+  "cn": "Jane Smith", 
+  "sn": "Smith", 
+  "givenName": "Jane", 
+  "mail": "jsmith@example.com", 
+  "userPassword": "{SSHA}yh3GQ8D+V21P9+KM4X5Ll5B0"
+}
+{
+ "dn": "cn=Bob Johnson,ou=people,dc=example,dc=com", 
+ "objectClass": 
+   [
+     "top", 
+     "person", 
+     "organizationalPerson"
+   ], 
+ "cn": "Bob Johnson", 
+ "sn": "Johnson", 
+ "givenName": "Bob", 
+ "mail": "bjohnson@example.com", 
+ "userPassword": "{SSHA}yMuK7t3Pw+X8N9+G5p0B42L4"
+}
+{
+ "dn": "cn=Alice Green,ou=people,dc=example,dc=com", 
+ "objectClass": 
+   [
+    "top", 
+    "person", 
+    "organizationalPerson"
+   ], 
+ "cn": "Alice Green", 
+ "sn": "Green", 
+ "givenName": "Alice", 
+ "mail": "agreen@example.com", 
+ "userPassword": "{SSHA}yN6B3Lj8+C0V7+K6p1Lb9R48"
+}
+{
+ "dn": "cn=Samantha Brown,ou=people,dc=example,dc=com", 
+ "objectClass": 
+   [
+     "top", 
+     "person", 
+     "organizationalPerson"
+   ], 
+ "cn": "Samantha Brown", 
+ "sn": "Brown", 
+ "givenName": "Samantha", 
+ "mail": "sbrown@example.com", 
+ "userPassword": "{SSHA}y9Lt9V4+M2N8+K1p7Lm6J3""}
+{
+ "dn": "cn=Emily Chen,ou=people,dc=example,dc=com", 
+ "objectClass": 
+   [
+    "top", 
+    "person", 
+    "organizationalPerson"
+   ],
+ "cn": "Emily Chen", 
+ "sn": "Chen",
+ "givenName": "Emily", 
+ "mail": "echen@example.com", 
+ "userPassword": "{SSHA}y7Jt9S2+F1N8+K3p4L8P6"
+}
+

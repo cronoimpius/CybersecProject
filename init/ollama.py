@@ -1,4 +1,4 @@
-#! /usr/bin/env python3
+#! /usr/bin/env python3.11
 # vim:fenc=utf-8
 #
 # Copyright © 2023 t14 <t14@t14>
@@ -12,18 +12,18 @@ import json,os,sys
 from langchain.llms import Ollama
 
 ltemp = {
- "dn": "cn=John Doe,dc=example,dc=com",
- "objectClass": ["top", "person", "organizationalPerson"],
+ "dn": "cn=John Doe,ou=people,dc=example,dc=com",
+ "objectClass": ["top", "person", "organizationalPerson", "inetOrgPerson"],
  "cn": "John Doe",
  "sn": "Doe",
- "givenName": "John",
+ "givenName":"Jhon",
  "mail": "jdoe@example.com",
  "userPassword": "{SSHA}y6fKt9JVyP1SX2+5UkGX8X+Yq4"
 }
-stemp = {
+"""stemp = {
 
 }
-
+"""
 
 olama= Ollama(
     model="llama2",
@@ -48,7 +48,7 @@ with open("out.txt", "r") as f:
 
 os.remove("out.txt")
 print(lines)
-with open("./data/22_example.ldif", "a") as f:
+with open("/init/data/23_example.ldif", "a") as f:
     for line in lines:
         if len(line)>1:
             dic = json.loads(line)
@@ -57,7 +57,7 @@ with open("./data/22_example.ldif", "a") as f:
                 if isinstance(value, list):
                     for item in value:
                         #print(f'{key}:{item}')
-                        f.write(f'{key}:{item}\n')
+                        f.write(f'{key}: {item}\n')
                 else:
-                    f.write(f'{key}:{value}\n')
+                    f.write(f'{key}: {value}\n')
             f.write('\n')

@@ -7,7 +7,10 @@ PID=$!
 echo $PID
 wait $PID
 
-./ollama.py
+/init/ollama.py
+OP=$!
+echo $OP
+wait $OP
 
 /init/slapd-init.sh
 

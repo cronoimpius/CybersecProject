@@ -40,8 +40,8 @@ configure_admin_config_pw(){
 
 load_initial_data() {
     echo "Load data..."
-    local data=$(find ${DATA_DIR} -maxdepth 1 -name \*_\*.ldif -type f | sort)
-    for ldif in ${data}; do
+    dataf=$(find ${DATA_DIR} -maxdepth 1 -name \*_\*.ldif -type f | sort)
+    for ldif in ${dataf}; do
         echo "Processing file ${ldif}..."
 
         base_dn=${LDAP_BASEDN:-}

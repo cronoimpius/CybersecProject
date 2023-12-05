@@ -92,6 +92,27 @@
     \field{year}{2020}
   \endentry
 
+  \entry{langchain}{online}{}
+    \name{author}{1}{}{%
+      {{hash=CH}{%
+         family={Chase},
+         familyi={C\bibinitperiod},
+         given={Harrison},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \keyw{LLM framework}
+    \strng{namehash}{CH1}
+    \strng{fullhash}{CH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Langchain}
+    \verb{url}
+    \verb https://python.langchain.com/docs/get_started/introduction
+    \endverb
+    \field{year}{2022}
+  \endentry
+
   \entry{llama-cpp-python}{online}{}
     \keyw{data generation}
     \field{labeltitlesource}{title}
