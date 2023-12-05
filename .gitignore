@@ -16,4 +16,4 @@ exam/report/*.out
 exam/report/bib/*
 exam/report/config/*
 exam/report/code/*
-oci/image
+oci/image/*
