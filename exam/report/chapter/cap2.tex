@@ -14,10 +14,11 @@ After that it is made a copy of the deception and configuration data inside the 
 \\
 At the end of the Dockerfile it’s launched a script that configures the server.
 \section{Configuration scripts}
-The script is writen in bash and call starts and configure a daemon used in the data generation and calls two other scripts:
+The scripts are writen in bash and call, starts and configure the daemon used in the data generation and the one that starts the server. In particular:
 \begin{itemize}
-    \item the first is used to reconfigure the server
-    \item the second is used to run the server using the specified ports
+    \item one is used to reconfigure the server
+    \item the other is used to run the server using the specified ports
+    \item the last is used tu activare all the required components
 \end{itemize}
 \\
 In the first scripts are present four functions:\\
